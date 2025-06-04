@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 
 class ToolContext(BaseModel):
-    type: str                   # none, information, confirmation 
+    type: str                   # none, confirmation 
     requester: str
     request: str
 
@@ -25,11 +25,7 @@ class UserManager:
 
             # prompt UM-LLM to classify for confirmation
 
-        elif self.context.type == "information":
-
-            print("Yes information context response")                   
-
-            # prompt UM-LLM to classify for information
+            # return 
 
         else:
 

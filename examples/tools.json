@@ -1,0 +1,49 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "Be a helpful smart home assistant"
+    },
+    {
+      "role": "user",
+      "content": "Turn on the lights please"
+    }
+  ],
+  "tools": [
+    {
+        "type": "function",
+        "function": {
+            "name": "set_lights",
+            "description": "Sets lights to a percentage of their maximum brightness.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "brightness": {
+                        "type": "number",
+                        "description": "The brightness percentage from 0 to 100"
+                    }
+                },
+                "required": ["brightness"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "set_ac",
+            "description": "Sets the AC for the room to a degree.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "temperature": {
+                        "type": "number",
+                        "description": "The temperature that should be achieved by the ac in Celsius."
+                    }
+                },
+                "required": ["temperature"]
+            }
+        }
+    }
+  ],
+  "model": "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+}
